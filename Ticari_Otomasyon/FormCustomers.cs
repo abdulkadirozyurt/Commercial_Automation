@@ -1,13 +1,6 @@
-﻿using DevExpress.XtraRichEdit.Layout;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -32,7 +25,7 @@ namespace Ticari_Otomasyon
 
         }
 
-        void ListCities()
+        public void ListCities()
         {
             SqlCommand command = new SqlCommand("select SehirAdi from Sehirler", connection.ConnectSql());
             SqlDataReader dr = command.ExecuteReader();
@@ -41,10 +34,9 @@ namespace Ticari_Otomasyon
                 comboBoxEdit_city.Properties.Items.Add(dr[0]);
             }
             connection.ConnectSql().Close();
-
         }
 
-        void ListDistricts()
+        public void ListDistricts()
         {
             SqlCommand command = new SqlCommand("select IlceAdi from Ilceler", connection.ConnectSql());
             SqlDataReader dr = command.ExecuteReader();
@@ -53,8 +45,6 @@ namespace Ticari_Otomasyon
                 comboBoxEdit_district.Properties.Items.Add(dr[0]);
             }
             connection.ConnectSql().Close();
-
-
         }
 
 
@@ -115,17 +105,22 @@ namespace Ticari_Otomasyon
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             DataRow dr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
-            textEdit_id.Text = dr["Id"].ToString();
-            textEdit_firstName.Text = dr["Ad"].ToString();
-            textEdit_lastName.Text = dr["Soyad"].ToString();
-            maskedTextBox_phoneNumber1.Text = dr["Telefon1"].ToString();
-            maskedTextBox_phoneNumber2.Text = dr["Telefon2"].ToString();
-            maskedTextBox_identityNumber.Text = dr["KimlikNo"].ToString();
-            textEdit_email.Text = dr["Email"].ToString();
-            comboBoxEdit_city.Text = dr["Sehir"].ToString();
-            comboBoxEdit_district.Text = dr["Ilce"].ToString();
-            textEdit_taxAdministration.Text = dr["VergiDairesi"].ToString();
-            richTextBox_Address.Text = dr["Adres"].ToString();
+            if (dr != null)
+            {
+                textEdit_id.Text = dr["Id"].ToString();
+                textEdit_firstName.Text = dr["Ad"].ToString();
+                textEdit_lastName.Text = dr["Soyad"].ToString();
+                maskedTextBox_phoneNumber1.Text = dr["Telefon1"].ToString();
+                maskedTextBox_phoneNumber2.Text = dr["Telefon2"].ToString();
+                maskedTextBox_identityNumber.Text = dr["KimlikNo"].ToString();
+                textEdit_email.Text = dr["Email"].ToString();
+                comboBoxEdit_city.Text = dr["Sehir"].ToString();
+                comboBoxEdit_district.Text = dr["Ilce"].ToString();
+                textEdit_taxAdministration.Text = dr["VergiDairesi"].ToString();
+                richTextBox_Address.Text = dr["Adres"].ToString();
+            }
+
+
 
 
         }
@@ -134,7 +129,7 @@ namespace Ticari_Otomasyon
         {
 
 
-            DialogResult dr= MessageBox.Show("İlgili Müşteri Silinecek. Onaylıyor Musunuz?", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult dr = MessageBox.Show("İlgili Müşteri Silinecek. Onaylıyor Musunuz?", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dr == DialogResult.Yes)
             {
                 SqlCommand deleteCommand = new SqlCommand("delete from Musteriler where Id=@p1", connection.ConnectSql());
@@ -157,7 +152,7 @@ namespace Ticari_Otomasyon
 
         private void simpleButton_update_Click(object sender, EventArgs e)
         {
-            DialogResult dr=MessageBox.Show("İlgili Müşteri Güncellenecek. Onaylıyor Musunuz?", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult dr = MessageBox.Show("İlgili Müşteri Güncellenecek. Onaylıyor Musunuz?", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (dr == DialogResult.Yes)
             {

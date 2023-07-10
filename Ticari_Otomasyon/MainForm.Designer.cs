@@ -127,6 +127,7 @@ namespace Ticari_Otomasyon
             this.barButtonItem_Companies.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.barButtonItem_Companies.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonItem_Companies.Name = "barButtonItem_Companies";
+            this.barButtonItem_Companies.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem_Companies_ItemClick);
             // 
             // barButtonItem_Employees
             // 

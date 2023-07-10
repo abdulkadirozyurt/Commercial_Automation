@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace Ticari_Otomasyon
 {
@@ -32,7 +24,7 @@ namespace Ticari_Otomasyon
 
         FormCustomers formCustomers;
         private void barButtonItem_Customers_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {           
+        {
             if (formCustomers == null)
             {
                 formCustomers = new FormCustomers();
@@ -40,6 +32,17 @@ namespace Ticari_Otomasyon
                 formCustomers.Show();
             }
 
+        }
+        FormCompanies formCompanies;
+        private void barButtonItem_Companies_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (formCompanies == null)
+            {
+                formCompanies = new FormCompanies();
+                formCompanies.MdiParent = this;
+                formCompanies.Show();
+
+            }
         }
     }
 }
