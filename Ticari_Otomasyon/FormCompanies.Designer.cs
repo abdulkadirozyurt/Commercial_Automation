@@ -88,6 +88,7 @@ namespace Ticari_Otomasyon
             this.textEdit_specialCode3 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.textEdit_specialCode2 = new DevExpress.XtraEditors.TextEdit();
+            this.simpleButton_clean = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit_district.Properties)).BeginInit();
@@ -162,6 +163,7 @@ namespace Ticari_Otomasyon
             this.comboBoxEdit_city.Properties.Appearance.Options.UseFont = true;
             this.comboBoxEdit_city.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit_city.Properties.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit_city_Properties_SelectedIndexChanged);
             this.comboBoxEdit_city.Size = new System.Drawing.Size(152, 24);
             this.comboBoxEdit_city.TabIndex = 11;
             // 
@@ -235,6 +237,7 @@ namespace Ticari_Otomasyon
             this.simpleButton_update.Size = new System.Drawing.Size(95, 36);
             this.simpleButton_update.TabIndex = 13;
             this.simpleButton_update.Text = "Güncelle";
+            this.simpleButton_update.Click += new System.EventHandler(this.simpleButton_update_Click);
             // 
             // simpleButton_save
             // 
@@ -547,6 +550,7 @@ namespace Ticari_Otomasyon
             // 
             // groupControl5
             // 
+            this.groupControl5.Controls.Add(this.simpleButton_clean);
             this.groupControl5.Controls.Add(this.simpleButton_delete);
             this.groupControl5.Controls.Add(this.labelControl11);
             this.groupControl5.Controls.Add(this.comboBoxEdit_district);
@@ -717,6 +721,18 @@ namespace Ticari_Otomasyon
             this.textEdit_specialCode2.Size = new System.Drawing.Size(117, 24);
             this.textEdit_specialCode2.TabIndex = 16;
             // 
+            // simpleButton_clean
+            // 
+            this.simpleButton_clean.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.simpleButton_clean.Appearance.Options.UseFont = true;
+            this.simpleButton_clean.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton_clean.Location = new System.Drawing.Point(115, 333);
+            this.simpleButton_clean.Name = "simpleButton_clean";
+            this.simpleButton_clean.Size = new System.Drawing.Size(95, 36);
+            this.simpleButton_clean.TabIndex = 25;
+            this.simpleButton_clean.Text = "Temizle";
+            this.simpleButton_clean.Click += new System.EventHandler(this.simpleButton_clean_Click);
+            // 
             // FormCompanies
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -832,5 +848,6 @@ namespace Ticari_Otomasyon
         private System.Windows.Forms.RichTextBox richTextBox_specialCode1;
         private System.Windows.Forms.RichTextBox richTextBox_specialCode2;
         private System.Windows.Forms.RichTextBox richTextBox_specialCode3;
+        private DevExpress.XtraEditors.SimpleButton simpleButton_clean;
     }
 }

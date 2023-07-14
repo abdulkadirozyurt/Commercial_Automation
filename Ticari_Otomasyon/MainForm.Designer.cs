@@ -138,6 +138,7 @@ namespace Ticari_Otomasyon
             this.barButtonItem_Employees.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.barButtonItem_Employees.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonItem_Employees.Name = "barButtonItem_Employees";
+            this.barButtonItem_Employees.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem_Employees_ItemClick);
             // 
             // barButtonItem_Outgoings
             // 
@@ -148,6 +149,7 @@ namespace Ticari_Otomasyon
             this.barButtonItem_Outgoings.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.barButtonItem_Outgoings.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonItem_Outgoings.Name = "barButtonItem_Outgoings";
+            this.barButtonItem_Outgoings.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem_Outgoings_ItemClick);
             // 
             // barButtonItem_Case
             // 
@@ -188,6 +190,7 @@ namespace Ticari_Otomasyon
             this.barButtonItem_Contacts.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.barButtonItem_Contacts.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonItem_Contacts.Name = "barButtonItem_Contacts";
+            this.barButtonItem_Contacts.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem_Contacts_ItemClick);
             // 
             // barButtonItem_Invoices
             // 

@@ -44,5 +44,37 @@ namespace Ticari_Otomasyon
 
             }
         }
+
+        FormEmployees formEmployees;
+        private void barButtonItem_Employees_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (formEmployees == null)
+            {
+                formEmployees = new FormEmployees();
+                formEmployees.MdiParent = this;
+                formEmployees.Show();
+            }
+        }
+
+        FormContacts formContacts;
+        private void barButtonItem_Contacts_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (formContacts==null)
+            {
+                formContacts = new FormContacts();
+                formContacts.MdiParent = this;
+                formContacts.Show();
+            }
+        }
+        FormOutgoings formOutgoings;
+        private void barButtonItem_Outgoings_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (formOutgoings==null)
+            {
+                formOutgoings = new FormOutgoings();
+                formOutgoings.MdiParent = this;
+                formOutgoings.Show();
+            }
+        }
     }
 }

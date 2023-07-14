@@ -154,7 +154,7 @@ namespace Ticari_Otomasyon
 
         private void simpleButton_delete_Click(object sender, EventArgs e)
         {
-            SqlCommand deleteCommand = new SqlCommand("delete from Firmalar where Id=@p1",connection.ConnectSql());
+            SqlCommand deleteCommand = new SqlCommand("delete from Firmalar where Id=@p1", connection.ConnectSql());
             deleteCommand.Parameters.AddWithValue("@p1", textEdit_id.Text);
             deleteCommand.ExecuteNonQuery();
             connection.ConnectSql().Close();
@@ -162,6 +162,56 @@ namespace Ticari_Otomasyon
             ListCompanies();
             Clean();
 
+        }
+
+        private void simpleButton_update_Click(object sender, EventArgs e)
+        {
+            SqlCommand updateCommand = new SqlCommand("update Firmalar set Unvan=@p1,FirmaYetkilisi=@p2,FirmaYetkilisiPozisyonu=@p3,YetkiliKimlikNo=@p4,Sektor=@p5,Telefon1=@p6,Telefon2=@p7,Telefon3=@p8,Email=@p9,Fax=@p10,Sehir=@p11,Ilce=@p12,VergiDairesi=@p13,Adres=@p14,OzelKod1=@p15,OzelKod2=@p16,OzelKod3=@p17 where Id=@p18", connection.ConnectSql());
+            updateCommand.Parameters.AddWithValue("@p1", textEdit_companyTitle.Text);
+            updateCommand.Parameters.AddWithValue("@p2", textEdit1_authorizedEmployee.Text);
+            updateCommand.Parameters.AddWithValue("@p3", textEdit_position.Text);
+            updateCommand.Parameters.AddWithValue("@p4", maskedTextBox_AuthorizedEmployeeIdentityNumber.Text);
+            updateCommand.Parameters.AddWithValue("@p5", textEdit_companySector.Text);
+            updateCommand.Parameters.AddWithValue("@p6", maskedTextBox_phoneNumber1.Text);
+            updateCommand.Parameters.AddWithValue("@p7", maskedTextBox_phoneNumber2.Text);
+            updateCommand.Parameters.AddWithValue("@p8", maskedTextBox_phoneNumber3.Text);
+            updateCommand.Parameters.AddWithValue("@p9", textEdit_email.Text);
+            updateCommand.Parameters.AddWithValue("@p10", maskedTextBox_faxNumber.Text);
+            updateCommand.Parameters.AddWithValue("@p11", comboBoxEdit_city.Text);
+            updateCommand.Parameters.AddWithValue("@p12", comboBoxEdit_district.Text);
+            updateCommand.Parameters.AddWithValue("@p13", textEdit_taxAdministration.Text);
+            updateCommand.Parameters.AddWithValue("@p14", richTextBox_Address.Text);
+            updateCommand.Parameters.AddWithValue("@p15", textEdit_specialCode1.Text);
+            updateCommand.Parameters.AddWithValue("@p16", textEdit_specialCode2.Text);
+            updateCommand.Parameters.AddWithValue("@p17", textEdit_specialCode3.Text);
+            updateCommand.Parameters.AddWithValue("@p18", textEdit_id.Text);
+
+            updateCommand.ExecuteNonQuery();
+            connection.ConnectSql().Close();
+            MessageBox.Show("Firma Güncellendi");
+            ListCompanies();
+            Clean();
+
+        }
+
+        private void comboBoxEdit_city_Properties_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBoxEdit_district.Properties.Items.Clear();
+            comboBoxEdit_district.Text = "";
+
+            SqlCommand command = new SqlCommand("select IlceAdi from Ilceler where SehirId=@p1 order by IlceAdi asc", connection.ConnectSql());
+            command.Parameters.AddWithValue("@p1", comboBoxEdit_city.SelectedIndex + 1);
+            SqlDataReader dr = command.ExecuteReader();
+            while (dr.Read())
+            {
+                comboBoxEdit_district.Properties.Items.Add(dr[0]);
+            }
+            connection.ConnectSql().Close();
+        }
+
+        private void simpleButton_clean_Click(object sender, EventArgs e)
+        {
+            Clean();
         }
     }
 }
