@@ -62,6 +62,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonMethods.cs" />
+    <Compile Include="FormBanks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBanks.Designer.cs">
+      <DependentUpon>FormBanks.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCompanies.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     <Compile Include="MsSqlConnection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormBanks.resx">
+      <DependentUpon>FormBanks.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCompanies.resx">
       <DependentUpon>FormCompanies.cs</DependentUpon>
     </EmbeddedResource>

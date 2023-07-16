@@ -180,6 +180,7 @@ namespace Ticari_Otomasyon
             this.barButtonItem_Banks.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.barButtonItem_Banks.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonItem_Banks.Name = "barButtonItem_Banks";
+            this.barButtonItem_Banks.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem_Banks_ItemClick);
             // 
             // barButtonItem_Contacts
             // 

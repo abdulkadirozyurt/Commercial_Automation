@@ -139,9 +139,9 @@ namespace Ticari_Otomasyon
             addCommand.Parameters.AddWithValue("@p12", comboBoxEdit_district.Text);
             addCommand.Parameters.AddWithValue("@p13", textEdit_taxAdministration.Text);
             addCommand.Parameters.AddWithValue("@p14", richTextBox_Address.Text);
-            addCommand.Parameters.AddWithValue("@p15", richTextBox_specialCode1.Text);
-            addCommand.Parameters.AddWithValue("@p16", richTextBox_specialCode2.Text);
-            addCommand.Parameters.AddWithValue("@p17", richTextBox_specialCode3.Text);
+            addCommand.Parameters.AddWithValue("@p15", textEdit_specialCode1.Text);
+            addCommand.Parameters.AddWithValue("@p16", textEdit_specialCode2.Text);
+            addCommand.Parameters.AddWithValue("@p17", textEdit_specialCode3.Text);
 
             addCommand.ExecuteNonQuery();
             connection.ConnectSql().Close();
