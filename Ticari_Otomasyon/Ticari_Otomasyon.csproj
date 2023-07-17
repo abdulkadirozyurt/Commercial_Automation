@@ -86,6 +86,12 @@
     <Compile Include="FormEmployees.Designer.cs">
       <DependentUpon>FormEmployees.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormInvoices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInvoices.Designer.cs">
+      <DependentUpon>FormInvoices.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormEmployees.resx">
       <DependentUpon>FormEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInvoices.resx">
+      <DependentUpon>FormInvoices.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMail.resx">
       <DependentUpon>FormMail.cs</DependentUpon>
